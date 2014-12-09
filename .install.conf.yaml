@@ -1,5 +1,9 @@
 - clean: ['~']
 
+- shell:
+    - [mkdir -p ~/.ssh, Create ~/.ssh]
+
 - link:
     ~/.dotfiles: ''
+    ~/.ssh/config: ssh/config
     ~/.tmux.conf: tmux.conf

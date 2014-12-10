@@ -9,3 +9,4 @@
     ~/.bashrc: bashrc
     ~/.ssh/config: ssh/config
     ~/.tmux.conf: tmux.conf
+    ~/.Xresources: x/resources

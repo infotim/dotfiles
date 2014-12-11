@@ -1,4 +1,4 @@
 HISTCONTROL=ignoreboth:erasedups
 HISTFILESIZE=5000
-HISTIGNORE=mc:bc
+HISTIGNORE=mc:bc:ls:ll
 HISTSIZE=1000

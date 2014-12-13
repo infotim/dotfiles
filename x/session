@@ -1,0 +1,25 @@
+#!/bin/sh
+
+# Disable touchpad
+xinput set-prop $(xinput list | perl -lnwe '/TouchPad.*?id=(\d+)/&&print $1') "Device Enabled" 0
+
+# Per-window keyboard layout switching daemon
+/usr/bin/kbdd
+
+# Fix mouse buttons
+/usr/bin/xmodmap $HOME/.Xmodmap
+
+eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11)
+export GNOME_KEYRING_CONTROL
+
+# mega.co.nz client
+/usr/bin/megasync &
+
+# Bluetooth applet
+/usr/bin/blueman-applet &
+
+# Network manager applet
+/usr/bin/nm-applet &
+
+# Go awesome! :)
+exec /usr/bin/awesome

@@ -6,6 +6,7 @@
 
 - link:
     ~/.dotfiles: ''
+    ~/.fonts: .fonts
     ~/.bash: bash
     ~/.bashrc: bashrc
     ~/.dircolors: dircolors

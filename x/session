@@ -21,5 +21,10 @@ export GNOME_KEYRING_CONTROL
 # Network manager applet
 /usr/bin/nm-applet &
 
+# Setup fonts vor vim-airline
+if [[ -n $(which fc-cache) ]]; then
+    fc-cache -f $HOME/.fonts
+fi
+
 # Go awesome! :)
 exec /usr/bin/awesome

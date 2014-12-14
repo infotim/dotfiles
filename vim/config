@@ -4,3 +4,6 @@ filetype plugin indent on
 
 "lpenz/vimcommander/
 noremap <silent> <F11> :cal VimCommanderToggle()<CR>
+
+"altercation/vim-colors-solarized.git
+colorscheme solarized

@@ -2,6 +2,7 @@
 
 - shell:
     - [mkdir -p ~/.ssh, Create ~/.ssh]
+    - [mkdir -p ~/.vim/autoload, Create ~/.vim/autoload]
 
 - link:
     ~/.dotfiles: ''
@@ -12,6 +13,8 @@
     ~/.gitignore_global: git/ignore
     ~/.ssh/config: ssh/config
     ~/.tmux.conf: tmux.conf
+    ~/.vimrc: vim/config
+    ~/.vim/autoload/pathogen.vim: vim/pathogen/autoload/pathogen.vim
     ~/.Xresources: x/resources
     ~/.Xmodmap: x/modmap
     ~/.xsession: x/session

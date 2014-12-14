@@ -1,3 +1,6 @@
 execute pathogen#infect()
 syntax on
 filetype plugin indent on
+
+"lpenz/vimcommander/
+noremap <silent> <F11> :cal VimCommanderToggle()<CR>

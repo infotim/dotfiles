@@ -15,6 +15,7 @@
     ~/.tmux.conf: tmux.conf
     ~/.vimrc: vim/config
     ~/.vim/autoload/pathogen.vim: vim/pathogen/autoload/pathogen.vim
+    ~/.vim/bundle: vim/bundle
     ~/.Xresources: x/resources
     ~/.Xmodmap: x/modmap
     ~/.xsession: x/session

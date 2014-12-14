@@ -7,6 +7,5 @@ Host gate
 Host ncux
     ProxyCommand ssh -q gate nc -q0 ncux 22
 
-Host *.ell.ru
-Host ell.ru
+Host *.ell.ru ell.ru
     User root

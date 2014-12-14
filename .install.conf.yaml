@@ -13,4 +13,5 @@
     ~/.ssh/config: ssh/config
     ~/.tmux.conf: tmux.conf
     ~/.Xresources: x/resources
+    ~/.Xmodmap: x/modmap
     ~/.xsession: x/session

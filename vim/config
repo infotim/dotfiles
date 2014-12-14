@@ -1,5 +1,6 @@
 execute pathogen#infect()
 syntax on
+set number
 filetype plugin indent on
 
 "lpenz/vimcommander/
@@ -7,3 +8,7 @@ noremap <silent> <F11> :cal VimCommanderToggle()<CR>
 
 "altercation/vim-colors-solarized.git
 colorscheme solarized
+
+"bling/vim-airline
+set laststatus=2
+let g:airline#extensions#tabline#enabled = 1

@@ -1,0 +1,17 @@
+[core]
+	excludesfile = /home/foo/.gitignore_global
+
+[user]
+	name = Timofey Stolbov
+	email = timofey@stolbov.info
+
+[color]
+	ui = true
+
+[alias]
+    ll = log --format=line
+    lg = log --graph --format=line
+    st = status -sb
+
+[pretty]
+    line ="%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset"

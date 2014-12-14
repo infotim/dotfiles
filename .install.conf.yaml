@@ -8,6 +8,8 @@
     ~/.bash: bash
     ~/.bashrc: bashrc
     ~/.dircolors: dircolors
+    ~/.gitconfig: git/config
+    ~/.gitignore_global: git/ignore
     ~/.ssh/config: ssh/config
     ~/.tmux.conf: tmux.conf
     ~/.Xresources: x/resources

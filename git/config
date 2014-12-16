@@ -12,6 +12,11 @@
     ll = log --format=line
     lg = log --graph --format=line
     st = status -sb
+    ci = commit
+    ca = commit --amend
+    co = checkout
+    di = diff
+    dh = diff HEAD~
 
 [pretty]
     line ="%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset"

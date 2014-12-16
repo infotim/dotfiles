@@ -1,11 +1,2 @@
-Host gate
-    HostName 82.193.140.74
-    User keeper
-    IdentityFile ~/.ssh/id_rsa.gate
-    IdentityFile ~/.ssh/id_rsa
-
-Host ncux
-    ProxyCommand ssh -q gate nc -q0 ncux 22
-
 Host *.ell.ru ell.ru
     User root

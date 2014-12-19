@@ -12,6 +12,7 @@
     ll = log --format=line
     lg = log --graph --format=line
     st = status -sb
+    aa = add .
     ci = commit
     ca = commit --amend
     co = checkout

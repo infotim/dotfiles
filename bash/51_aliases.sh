@@ -5,8 +5,10 @@ alias la='ls -la'
 alias df='df -h'
 alias du='du -h'
 
-alias grep='grep --color=auto'
+alias ack='ack-grep --color'
+alias ack-grep='ack-grep --color'
 alias egrep='egrep --color=auto'
+alias grep='grep --color=auto'
 
 alias ..='cd ..'
 alias ...='cd ../..'

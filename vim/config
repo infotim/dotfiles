@@ -1,7 +1,13 @@
 execute pathogen#infect()
+filetype plugin indent on
+
 syntax on
 set number
-filetype plugin indent on
+set wildmenu
+set tabstop=4
+set shiftwidth=4
+set expandtab
+
 
 "lpenz/vimcommander/
 noremap <silent> <F11> :cal VimCommanderToggle()<CR>

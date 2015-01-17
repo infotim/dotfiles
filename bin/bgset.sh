@@ -2,7 +2,7 @@
 set -e
 
 CMD="feh --bg-scale"
-IMAGE_DIR=~/media/image/yandex
+IMAGE_DIR=~/Dropbox/image/yandex
 
 if [ $# -eq 0 ]; then
     if [ -d $IMAGE_DIR ]; then

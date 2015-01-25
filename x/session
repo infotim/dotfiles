@@ -29,7 +29,7 @@ fi
 # Setup display
 xrandr -q | grep -q "HDMI1 connected"
 if [ $? -eq 0 ]; then
-    xrandr --output HDMI1 --mode 1920x1080 --left-of LVDS1
+    xrandr --output HDMI1 --primary --mode 1920x1080 --left-of LVDS1
 fi
 
 # Go awesome! :)

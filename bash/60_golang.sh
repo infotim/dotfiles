@@ -1,3 +1,3 @@
-export GOROOT=$HOME/opt/gobase
-export GOPATH=$HOME/opt/gocode
+export GOROOT=$HOME/opt/go/base
+export GOPATH=$HOME/opt/go/code
 export PATH=$PATH:$GOROOT/bin/:$GOPATH/bin/

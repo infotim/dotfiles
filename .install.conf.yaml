@@ -1,11 +1,13 @@
 - clean: ['~']
 
 - shell:
+    - [mkdir -p ~/.config/, Create ~/.config]
     - [mkdir -p ~/.vim/autoload, Create ~/.vim/autoload]
 
 - link:
     ~/.dotfiles: ''
     ~/.fonts: .fonts
+    ~/.config/firejail: firejail
     ~/.bash: bash
     ~/.bashrc: bashrc
     ~/.bash_profile: bash_profile

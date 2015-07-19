@@ -9,11 +9,8 @@ xinput set-prop $(xinput list | perl -lnwe '/TouchPad.*?id=(\d+)/&&print $1') "D
 # Fix mouse buttons
 /usr/bin/xmodmap $HOME/.Xmodmap
 
-eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11)
-export GNOME_KEYRING_CONTROL
-
-# mega.co.nz client
-/usr/bin/megasync &
+#eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11)
+#export GNOME_KEYRING_CONTROL
 
 # Bluetooth applet
 /usr/bin/blueman-applet &

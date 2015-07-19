@@ -8,6 +8,7 @@
     ~/.fonts: .fonts
     ~/.bash: bash
     ~/.bashrc: bashrc
+    ~/.bash_profile: bash_profile
     ~/.dircolors: dircolors
     ~/.gitconfig: git/config
     ~/.gitignore_global: git/ignore

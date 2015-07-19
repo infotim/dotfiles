@@ -1,7 +1,6 @@
 - clean: ['~']
 
 - shell:
-    - [mkdir -p ~/.ssh, Create ~/.ssh]
     - [mkdir -p ~/.vim/autoload, Create ~/.vim/autoload]
 
 - link:

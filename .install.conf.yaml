@@ -12,7 +12,6 @@
     ~/.dircolors: dircolors
     ~/.gitconfig: git/config
     ~/.gitignore_global: git/ignore
-    ~/.ssh/config: ssh/config
     ~/.tmux.conf: tmux.conf
     ~/.vimrc: vim/config
     ~/.vim/autoload/pathogen.vim: vim/pathogen/autoload/pathogen.vim

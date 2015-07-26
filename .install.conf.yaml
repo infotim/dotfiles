@@ -5,6 +5,7 @@
     - [mkdir -p ~/.vim/autoload, Create ~/.vim/autoload]
 
 - link:
+    ~/.ansible.cfg: ansible.cfg
     ~/.dotfiles: ''
     ~/.fonts: .fonts
     ~/.config/firejail: firejail

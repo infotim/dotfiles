@@ -13,6 +13,9 @@ alias grep='grep --color=auto'
 alias cmm='cryptmount -am'
 alias cmu='cryptmount -au'
 
+alias poweroff='systemctl poweroff'
+alias reboot='systemctl reboot'
+
 alias ..='cd ..'
 alias ...='cd ../..'
 

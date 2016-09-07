@@ -21,4 +21,3 @@
     ~/.vim/bundle: vim/bundle
     ~/.Xresources: x/resources
     ~/.Xmodmap: x/modmap
-    ~/.xsession: x/session

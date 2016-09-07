@@ -1,3 +1,0 @@
-function = () {
-    echo $* | bc -q
-}

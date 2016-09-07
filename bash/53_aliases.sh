@@ -19,4 +19,4 @@ alias reboot='systemctl reboot'
 alias ..='cd ..'
 alias ...='cd ../..'
 
-bashrc::set_aliases_local
+bashrc::set_local aliases

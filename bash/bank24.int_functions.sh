@@ -18,7 +18,7 @@ function g.project () {
     for x in $(find ${REPO_ROOT} -name .git -type d); do
         local CONF="${x}/config"
         if [ -r $CONF ]; then
-            grep -q "@stash.bank24.int" $CONF
+            grep -q ${1:-"@stash.bank24.int"} $CONF
             if [ $? -eq 0 ]; then
                 REPO_LIST+=($(dirname $x | cut -d/ -f5-))
             fi

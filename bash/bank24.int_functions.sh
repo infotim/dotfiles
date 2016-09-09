@@ -13,7 +13,6 @@ function g.clone () {
 function g.project () {
     local REPO_ROOT=~/src
     local REPO_LIST
-    declare -i REPO_NUM=9999
 
     for x in $(find ${REPO_ROOT} -name .git -type d); do
         local CONF="${x}/config"
@@ -25,13 +24,7 @@ function g.project () {
         fi
     done
 
-    for x in "${!REPO_LIST[@]}"; do
-        echo -e "${x}\t${REPO_LIST[$x]}"
-    done
-
-    while [[ -z ${REPO_LIST[$REPO_NUM]} ]]; do
-        read -p "Choose: " REPO_NUM
-    done
-
-    cd ${REPO_ROOT}/${REPO_LIST[$REPO_NUM]}
+    array::prompt REPO_LIST[@]
+    array::choose REPO_LIST[@]
+    cd ${REPO_ROOT}/${REPO_LIST[$?]}
 }

@@ -27,3 +27,15 @@ function array::prompt () {
         echo -e "${x}\t${ARRAY[$x]}"
     done
 }
+
+function cd.l () {
+    local ROOT=$(python3 -m site -c --user-site)
+    local LIBS=($(\
+        find $ROOT -maxdepth 2 -name PKG-INFO -o -name METADATA\
+        | perl -lnwe 'm!/(\w+)-\d+!&&print $1'\
+        | sort\
+    ))
+    array::prompt LIBS[@]
+    array::choose LIBS[@]
+    cd "${ROOT}/${LIBS[$?]}"
+}

@@ -28,14 +28,16 @@ function array::prompt () {
     done
 }
 
-function cd.l () {
-    local ROOT=$(python3 -m site -c --user-site)
-    local LIBS=($(\
+function _cdl () {
+    local ROOT=$(python3 -m site --user-site)
+    local CUR=${COMP_WORDS[COMP_CWORD]}
+    COMPREPLY=($(\
         find $ROOT -maxdepth 2 -name PKG-INFO -o -name METADATA\
         | perl -lnwe 'm!/(\w+)-\d+!&&print $1'\
-        | sort\
+        | grep -i "$CUR"
     ))
-    array::prompt LIBS[@]
-    array::choose LIBS[@]
-    cd "${ROOT}/${LIBS[$?]}"
 }
+function cdl () {
+    cd "$(python3 -m site --user-site)/${1}"
+}
+complete -F _cdl cdl

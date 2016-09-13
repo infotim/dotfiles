@@ -19,4 +19,6 @@ alias reboot='systemctl reboot'
 alias ..='cd ..'
 alias ...='cd ../..'
 
+alias pip='pip3'
+
 bashrc::set_local aliases

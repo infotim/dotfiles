@@ -29,16 +29,17 @@ function array::prompt () {
 }
 
 function _cdl () {
-    local ROOT=$(python3 -m site --user-site)
     local CUR=${COMP_WORDS[COMP_CWORD]}
     COMPREPLY=($(\
-        find $ROOT -maxdepth 2 -name PKG-INFO -o -name METADATA\
+        find $MY_SITE_PACKAGES -maxdepth 2 -name PKG-INFO -o -name METADATA\
         | perl -lnwe 'm!/(\w+)-\d+!&&print $1'\
         | grep -i "$CUR"
     ))
 }
 function cdl () {
-    cd "$(python3 -m site --user-site)/${1}"
+    local PATH=${MY_SITE_PACKAGES}/${1}
+    test -d $PATH && cd $PATH
+    test -f ${PATH}.py && $EDITOR ${PATH}.py
 }
 complete -F _cdl cdl
 

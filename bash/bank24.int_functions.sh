@@ -2,7 +2,9 @@ function g.clone () {
     test -z $1 && echo 'Nothing to do' && return
 
     local PROJ REPO
-    IFS=/ read PROJ REPO <<< $1
+    IFS=/ read PROJ REPO <<- EOL
+$1
+EOL
 
     mkdir -p ~/src/${PROJ}
     cd ~/src/${PROJ}

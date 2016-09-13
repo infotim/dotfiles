@@ -41,3 +41,8 @@ function cdl () {
     cd "$(python3 -m site --user-site)/${1}"
 }
 complete -F _cdl cdl
+
+function mkpackage () {
+    mkdir -p "${1}"
+    touch "${1}/__init__.py"
+}

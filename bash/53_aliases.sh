@@ -16,6 +16,8 @@ alias cmu='cryptmount -au'
 alias poweroff='systemctl poweroff'
 alias reboot='systemctl reboot'
 
+alias gi='git'
+
 alias ..='cd ..'
 alias ...='cd ../..'
 

@@ -10,6 +10,7 @@
 
 [alias]
     aa = add .
+    br = branch
     ca = commit --amend
     ci = commit
     co = checkout

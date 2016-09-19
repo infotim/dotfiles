@@ -6,3 +6,5 @@ if [ ! -d ${HOME}/src ]; then
     mkdir ${HOME}/src
 fi
 declare -rx MY_SRC=${HOME}/src
+
+declare -rx TODOTXT_DEFAULT_ACTION=ls

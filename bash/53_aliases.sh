@@ -23,4 +23,6 @@ alias ...='cd ../..'
 
 alias pip='pip3'
 
+alias t='todo-txt'
+
 bashrc::set_local aliases

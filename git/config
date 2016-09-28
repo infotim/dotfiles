@@ -11,7 +11,7 @@
 [alias]
     aa      = add .
     br      = branch
-    brr     = branch -vv
+    brr     = "!f () { LANG=C git branch -vv; }; f"
     ca      = commit --amend
     ci      = commit
     co      = checkout

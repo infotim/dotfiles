@@ -9,18 +9,20 @@
 	ui = true
 
 [alias]
-    aa = add .
-    br = branch
-    ca = commit --amend
-    ci = commit
-    co = checkout
-    dh = diff HEAD~
-    di = diff
-    lg = log --graph --format=line
-    ll = log --format=line
-    pl = pull --tags
-    pu = push
-    st = status -sb
+    aa      = add .
+    br      = branch
+    brr     = branch -vv
+    ca      = commit --amend
+    ci      = commit
+    co      = checkout
+    cof     = checkout -b feature/
+    dh      = diff HEAD~
+    di      = diff
+    lg      = log --graph --format=line
+    ll      = log --format=line
+    pl      = pull --tags
+    pu      = push
+    st      = status -sb
 
 [pretty]
     line ="%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset"

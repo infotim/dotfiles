@@ -3,6 +3,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'altercation/vim-colors-solarized'
 Plug 'bling/vim-airline'
 Plug 'ervandew/supertab'
+Plug 'mileszs/ack.vim'
 
 call plug#end()
 
@@ -15,18 +16,33 @@ let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 
 
-filetype plugin indent on
 set nocompatible
+filetype plugin indent on
+
+let mapleader = "\<Space>"
 
 syntax on
 
-set tabstop=4
+set expandtab
 set shiftwidth=4
 set softtabstop=4
-set expandtab
+set tabstop=4
 
-set relativenumber
-set number
 set cursorline
+set number
+set relativenumber
+set showcmd
 
 set wildmenu
+
+set ignorecase
+set smartcase
+
+inoremap jj <Esc>
+nnoremap / /\v
+nnoremap ; :
+
+nnoremap <leader>a :Ack<Space>
+nnoremap <leader>w :w<CR>
+nnoremap <leader>q :q<CR>
+vnoremap <leader>s :sort<CR>

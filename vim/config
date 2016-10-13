@@ -1,21 +1,32 @@
-execute pathogen#infect()
-filetype plugin indent on
+call plug#begin('~/.vim/plugged')
 
-syntax on
-set number
-set wildmenu
-set tabstop=4
-set shiftwidth=4
-set expandtab
+Plug 'altercation/vim-colors-solarized'
+Plug 'bling/vim-airline'
+Plug 'ervandew/supertab'
 
+call plug#end()
 
-"lpenz/vimcommander/
-noremap <silent> <F11> :cal VimCommanderToggle()<CR>
-
-"altercation/vim-colors-solarized.git
+"altercation/vim-colors-solarized
 colorscheme solarized
 
-"bling/vim-airline
+"bling/vim-airline'
 set laststatus=2
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
+
+
+filetype plugin indent on
+set nocompatible
+
+syntax on
+
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+set expandtab
+
+set relativenumber
+set number
+set cursorline
+
+set wildmenu

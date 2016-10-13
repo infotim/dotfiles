@@ -31,19 +31,21 @@ function install_vim_plug (){
 
 mkdir -p "${HOME}/.config"
 mkdir -p "${HOME}/.vim/autoload"
+mkdir -p "${HOME}/.vim/ftplugin"
 
 
-symlink     .               "${HOME}/.dotfiles"
-symlink     .fonts          "${HOME}/.fonts"
-symlink     firejail        "${HOME}/.config/firejail"
-symlink     bash            "${HOME}/.bash"
-symlink     bashrc          "${HOME}/.bashrc"
-symlink     bash_profile    "${HOME}/.bash_profile"
-symlink     dircolors       "${HOME}/.dircolors"
-symlink     git/config      "${HOME}/.gitconfig"
-symlink     git/ignore      "${HOME}/.gitignore_global"
-symlink     tmux.conf       "${HOME}/.tmux.conf"
-symlink     vim/config      "${HOME}/.vimrc"
-symlink     x/resources     "${HOME}/.Xresources"
+symlink     .                       "${HOME}/.dotfiles"
+symlink     .fonts                  "${HOME}/.fonts"
+symlink     bash                    "${HOME}/.bash"
+symlink     bash_profile            "${HOME}/.bash_profile"
+symlink     bashrc                  "${HOME}/.bashrc"
+symlink     dircolors               "${HOME}/.dircolors"
+symlink     firejail                "${HOME}/.config/firejail"
+symlink     git/config              "${HOME}/.gitconfig"
+symlink     git/ignore              "${HOME}/.gitignore_global"
+symlink     tmux.conf               "${HOME}/.tmux.conf"
+symlink     vim/config              "${HOME}/.vimrc"
+symlink     vim/ftplugin/python.vim "${HOME}/.vim/ftplugin/"
+symlink     x/resources             "${HOME}/.Xresources"
 
 install_vim_plug

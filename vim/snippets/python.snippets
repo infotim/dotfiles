@@ -1,0 +1,14 @@
+snippet #!
+	#!/usr/bin/env python3
+	# coding: utf-8
+snippet from
+	from ${1:package} import ${0:module}
+snippet glog
+	import logging
+	logger = logging.getLogger(${0:__name__})
+snippet ifmain
+	if __name__ == '__main__':
+		${0:main()}
+snippet pprint
+	import pprint
+	pprint.pprint(${1})

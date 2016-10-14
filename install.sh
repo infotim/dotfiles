@@ -12,7 +12,9 @@ function symlink () {
     local SRC=$(readlink -e "${1}")
     local DST="${2}"
     if [ -L $DST ]; then
-        printf "%-35s %s\n" ${DST} "${1}";
+        printf "%-35s %s\n" "${DST}" "${1}";
+    elif [ -d $DST -a -L "${DST}/$(basename ${SRC})" ]; then
+        printf "%-35s %s\n" "${DST}/$(basename ${SRC})" "${1}";
     else
         ln -s "${SRC}" "${DST}";
     fi
@@ -28,6 +30,8 @@ function install_vim_plug (){
     vim -e +PlugInstall +qa
 }
 
+mkdir -p "${HOME}/.local/bin"
+symlink "${HOME}/.local/bin" "${HOME}/bin"
 
 mkdir -p "${HOME}/.config"
 mkdir -p "${HOME}/.vim/autoload"
@@ -46,6 +50,7 @@ symlink     git/ignore              "${HOME}/.gitignore_global"
 symlink     tmux.conf               "${HOME}/.tmux.conf"
 symlink     vim/config              "${HOME}/.vimrc"
 symlink     vim/ftplugin/python.vim "${HOME}/.vim/ftplugin/"
+symlink     vim/snippets            "${HOME}/.vim/snippets"
 symlink     x/resources             "${HOME}/.Xresources"
 
 install_vim_plug

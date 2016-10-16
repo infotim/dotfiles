@@ -31,6 +31,8 @@ endfunction
 
 """
 set nocompatible
+set viminfo+=n~/.cache/viminfo
+
 filetype plugin indent on
 
 let mapleader = "\<Space>"

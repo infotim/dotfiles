@@ -57,6 +57,7 @@ function main () {
     make:link firejail      .config/
     make:link fonts         .fonts
     make:link git           .config/
+    make:link inputrc       .config/
     make:link profile       .profile
     make:link tmux.conf     .tmux.conf
     make:link x/resources   .Xresources

@@ -3,7 +3,17 @@ set -euo pipefail
 IFS=$'\n\t'
 
 
-DOTFILES=$(dirname $(readlink -e ${BASH_SOURCE[0]}))
+DOTFILES=$(dirname $(readlink -f ${BASH_SOURCE[0]}))
+
+
+function make:clean (){
+    find ${HOME} -type l -print0 |
+        while IFS= read -r -d $'\0' file; do
+            if [[ $(readlink -f ${file}) == ${DOTFILES}* ]]; then
+                rm -f ${file}
+            fi
+        done
+}
 
 
 function make:dir () {
@@ -35,6 +45,7 @@ function setup:vim () {
 
 function main () {
     cd "${DOTFILES}"
+    make:clean
 
     make:dir .cache
     make:dir .config

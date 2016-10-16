@@ -1,0 +1,54 @@
+# vim: set ft=sh:
+
+# If not running interactively, don't do anything
+[[ ! $- == *i* ]] && return
+
+
+shopt -s autocd
+shopt -s cdspell
+shopt -s checkwinsize
+shopt -s histappend
+shopt -u hostcomplete
+shopt -s no_empty_cmd_completion
+
+
+HISTCONTROL=ignoreboth:erasedups
+HISTFILE="${HOME}/.cache/bash_history"
+HISTFILESIZE=5000
+HISTIGNORE=mc:bc:cd:ls:ll:la:vim:rtorrent
+HISTSIZE=1000
+
+
+bind '"\C-f": menu-complete'
+
+
+export BC_ENV_ARGS="${HOME}/.config/bc/init"
+export EDITOR="/usr/bin/vim"
+export LESSHISTFILE="${HOME}/.cache/less_history"
+[[ -x /usr/bin/dircolors ]] && eval $(dircolors -b)  # Set LS_COLORS
+[[ -d "${HOME}/.local/bin" ]] && PATH="${HOME}/.local/bin:${PATH}"
+
+
+alias ...='cd ../..'
+alias ..='cd ..'
+alias ack='ack-grep --color'
+alias bc='bc -q'
+alias df='df -h'
+alias du='du -h'
+alias egrep='egrep --color=auto'
+alias gi='git'
+alias grep='grep --color=auto'
+alias la='ls -la --color=auto'
+alias ll='ls -l --color=auto'
+alias ls='ls --color=auto'
+alias poweroff='systemctl poweroff'
+alias reboot='systemctl reboot'
+
+
+for x in ${HOME}/.config/bash/*; do
+    if [[ -d $x ]]; then
+        for f in ${x}/*.sh; do
+            [[ -r $f ]] && . $f
+        done
+    fi
+done

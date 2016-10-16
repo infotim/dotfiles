@@ -20,9 +20,9 @@ function make:link () {
 
 function setup:vim () {
     make:dir    .vim
-    make:link        vim/vimrc      .vim/
-    make:link        vim/ftplugin   .vim/
-    make:link        vim/snippets   .vim/
+    make:link   vim/vimrc       .vim/
+    make:link   vim/ftplugin    .vim/
+    make:link   vim/snippets    .vim/
 
     local SRC="https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
     local DST="${HOME}/.vim/autoload/plug.vim"
@@ -36,19 +36,19 @@ function setup:vim () {
 function main () {
     cd "${DOTFILES}"
 
+    make:dir .cache
     make:dir .config
     make:dir .local/bin
 
-    make:link bash           .bash
-    make:link bash_profile   .bash_profile
-    make:link bashrc         .bashrc
-    make:link bc             .config/
-    make:link dircolors      .config/
-    make:link firejail       .config/
-    make:link fonts          .fonts
-    make:link git            .config/
-    make:link tmux.conf      .tmux.conf
-    make:link x/resources    .Xresources
+    make:link bash          .config/
+    make:link bash/bashrc   .bashrc
+    make:link bc            .config/
+    make:link firejail      .config/
+    make:link fonts         .fonts
+    make:link git           .config/
+    make:link profile       .profile
+    make:link tmux.conf     .tmux.conf
+    make:link x/resources   .Xresources
 
     setup:vim
 }

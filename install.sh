@@ -46,6 +46,7 @@ function setup:vim () {
 function main () {
     cd "${DOTFILES}"
     make:clean
+    ln -snf /dev/null "${HOME}/.xsession-errors"
 
     make:dir .cache
     make:dir .config

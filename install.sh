@@ -22,9 +22,9 @@ function make:dir () {
 
 
 function make:link () {
-    local SRC="${DOTFILES}/${1}"
-    local DST="${HOME}/${2}"
-    ln -snf "${SRC}" "${DST}"
+    local src="${DOTFILES}/${1}"
+    local dst="${HOME}/${2}"
+    ln -snf "${src}" "${dst}"
 }
 
 
@@ -34,11 +34,11 @@ function setup:vim () {
     make:link   vim/ftplugin    .vim/
     make:link   vim/snippets    .vim/
 
-    local SRC="https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
-    local DST="${HOME}/.vim/autoload/plug.vim"
+    local src="https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
+    local dst="${HOME}/.vim/autoload/plug.vim"
     curl --silent --fail --location\
-         --create-dirs --output "${DST}"\
-         "${SRC}"
+         --create-dirs --output "${dst}"\
+         "${src}"
     vim -e +PlugInstall +qa 2>/dev/null || true
 }
 

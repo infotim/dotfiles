@@ -1,3 +1,3 @@
 if [ -x /usr/bin/dircolors ]; then
-    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)"
+    test -r ~/.config/dircolors && eval "$(dircolors -b ~/config/dircolors)"
 fi

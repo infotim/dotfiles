@@ -1,5 +1,5 @@
 [core]
-	excludesfile = /home/foo/.gitignore_global
+	excludesfile = ~/.config/git/ignore
 
 [user]
 	name = Timofey Stolbov

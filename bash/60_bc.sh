@@ -1,2 +1,2 @@
-export BC_ENV_ARGS="$HOME/.dotfiles/bc/init"
+export BC_ENV_ARGS="${HOME}/.config/bc/init"
 alias bc='bc -q'

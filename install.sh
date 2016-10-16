@@ -1,56 +1,56 @@
 #!/bin/bash
-set -e
+set -euo pipefail
+IFS=$'\n\t'
 
-cd $(dirname $(readlink -e ${BASH_SOURCE[0]}))
 
-function msg () {
-    echo
-    echo $@
+DOTFILES=$(dirname $(readlink -e ${BASH_SOURCE[0]}))
+
+
+function make:dir () {
+    mkdir -p "${HOME}/${1}"
 }
 
-function symlink () {
-    local SRC=$(readlink -e "${1}")
-    local DST="${2}"
-    if [ -L $DST ]; then
-        printf "%-35s %s\n" "${DST}" "${1}";
-    elif [ -d $DST -a -L "${DST}/$(basename ${SRC})" ]; then
-        printf "%-35s %s\n" "${DST}/$(basename ${SRC})" "${1}";
-    else
-        ln -s "${SRC}" "${DST}";
-    fi
+
+function make:link () {
+    local SRC="${DOTFILES}/${1}"
+    local DST="${HOME}/${2}"
+    ln -snf "${SRC}" "${DST}"
 }
 
-function install_vim_plug (){
+
+function setup:vim () {
+    make:dir    .vim
+    make:link        vim/vimrc      .vim/
+    make:link        vim/ftplugin   .vim/
+    make:link        vim/snippets   .vim/
+
     local SRC="https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
     local DST="${HOME}/.vim/autoload/plug.vim"
-
-    msg "Installing vim-plug..."
-
-    curl --silent --fail --location --output "${DST}" "${SRC}"
-    vim -e +PlugInstall +qa
+    curl --silent --fail --location\
+         --create-dirs --output "${DST}"\
+         "${SRC}"
+    vim -e +PlugInstall +qa 2>/dev/null || true
 }
 
-mkdir -p "${HOME}/.local/bin"
-symlink "${HOME}/.local/bin" "${HOME}/bin"
 
-mkdir -p "${HOME}/.config"
-mkdir -p "${HOME}/.vim/autoload"
-mkdir -p "${HOME}/.vim/ftplugin"
+function main () {
+    cd "${DOTFILES}"
 
+    make:dir .config
+    make:dir .local/bin
 
-symlink     .                       "${HOME}/.dotfiles"
-symlink     .fonts                  "${HOME}/.fonts"
-symlink     bash                    "${HOME}/.bash"
-symlink     bash_profile            "${HOME}/.bash_profile"
-symlink     bashrc                  "${HOME}/.bashrc"
-symlink     dircolors               "${HOME}/.dircolors"
-symlink     firejail                "${HOME}/.config/firejail"
-symlink     git/config              "${HOME}/.gitconfig"
-symlink     git/ignore              "${HOME}/.gitignore_global"
-symlink     tmux.conf               "${HOME}/.tmux.conf"
-symlink     vim/config              "${HOME}/.vimrc"
-symlink     vim/ftplugin/python.vim "${HOME}/.vim/ftplugin/"
-symlink     vim/snippets            "${HOME}/.vim/snippets"
-symlink     x/resources             "${HOME}/.Xresources"
+    make:link bash           .bash
+    make:link bash_profile   .bash_profile
+    make:link bashrc         .bashrc
+    make:link bc             .config/
+    make:link dircolors      .config/
+    make:link firejail       .config/
+    make:link fonts          .fonts
+    make:link git            .config/
+    make:link tmux.conf      .tmux.conf
+    make:link x/resources    .Xresources
 
-install_vim_plug
+    setup:vim
+}
+
+main

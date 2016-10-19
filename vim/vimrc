@@ -5,10 +5,13 @@ call plug#begin('~/.vim/plugged')
 Plug 'MarcWeber/vim-addon-mw-utils' | Plug 'tomtom/tlib_vim' | Plug 'garbas/vim-snipmate'
 Plug 'Shougo/unite.vim'
 Plug 'Shougo/vimproc.vim', {'do' : 'make'}
+Plug 'airblade/vim-gitgutter'
 Plug 'altercation/vim-colors-solarized'
 Plug 'bling/vim-airline'
+Plug 'davidhalter/jedi-vim', {'for': 'python'}
 Plug 'ervandew/supertab'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-repeat'
 
 call plug#end()
 
@@ -33,6 +36,7 @@ endfunction
 """
 set nocompatible
 set viminfo+=n~/.cache/viminfo
+set updatetime=200
 
 filetype plugin indent on
 
@@ -71,3 +75,5 @@ nnoremap <leader>q :q<CR>
 nnoremap <leader>w :w<CR>
 vnoremap <leader>s :sort<CR>
 
+silent! call repeat#set("\<Plug>GitGutterNextHunk", v:count)
+silent! call repeat#set("\<Plug>GitGutterPrevHunk", v:count)

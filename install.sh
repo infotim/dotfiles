@@ -17,7 +17,9 @@ function make:clean (){
 
 
 function make:dir () {
-    mkdir -p "${HOME}/${1}"
+    for d in "$@"; do
+        mkdir -p "${HOME}/${d}"
+    done
 }
 
 
@@ -48,9 +50,7 @@ function main () {
     make:clean
     ln -snf /dev/null "${HOME}/.xsession-errors"
 
-    make:dir .cache
-    make:dir .config
-    make:dir .local/bin
+    make:dir .cache .config .local/bin
 
     make:link bash          .config/
     make:link bash/bashrc   .bashrc

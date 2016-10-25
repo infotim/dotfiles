@@ -12,7 +12,18 @@ function tm () {
     local path="${HOME}/src/${1}"
 
     if [[ $# -eq 0 ]]; then
-        tmux attach -t 0 || tmux
+        local sessions=($(tmux ls -F '#S' 2>/dev/null))
+        local sessions_count=${#sessions[@]}
+
+        if [[ $sessions_count -eq 0 ]]; then
+            tmux
+
+        elif [[ $sessions_count -eq 1 ]]; then
+            tmux attach -t "${sessions[0]}"
+
+        else
+            tmux ls
+        fi
 
     elif [[ $# -eq 1 && -d "${path}" ]]; then
         local session_name=${1/./_}  # tmux does not allow dot in session name

@@ -16,6 +16,7 @@ Plug 'tpope/vim-repeat'
 call plug#end()
 
 "altercation/vim-colors-solarized
+set background=dark
 colorscheme solarized
 
 "bling/vim-airline'

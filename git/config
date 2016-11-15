@@ -12,6 +12,7 @@
     aa      = add .
     br      = branch
     brr     = "!f () { LANG=C git branch -vv; }; f"
+    brc     = "!f () { git fetch --prune; git branch -d $(git branch --list --merged | grep -v -e develop -e master); }; f"
     ca      = commit --amend
     ci      = commit
     co      = checkout

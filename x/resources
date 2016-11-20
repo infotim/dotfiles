@@ -2,7 +2,7 @@ URxvt.cursorColor: green
 URxvt.cursorUnderLine: true
 URxvt.cursorBlink: true
 URxvt.scrollBar: false
-URxvt*font: xft:Terminus:size=14, xft:Inconsolata for Powerline
+URxvt*font: xft:Hack:size=12
 URxvt.intensityStyles: false
 URxvt.depth: 32
 

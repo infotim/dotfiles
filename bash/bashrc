@@ -42,6 +42,7 @@ alias grep='grep --color=auto'
 alias la='ls -la --color=auto'
 alias ll='ls -l --color=auto'
 alias ls='ls --color=auto'
+alias pie='perl -pi -e'
 alias poweroff='systemctl poweroff'
 alias reboot='systemctl reboot'
 

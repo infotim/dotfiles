@@ -17,7 +17,7 @@
     ci      = commit
     co      = checkout
     cob     = checkout -b
-    dh      = diff HEAD~
+    dh      = diff HEAD
     di      = diff
     lg      = log --graph --format=line
     ll      = log --format=line

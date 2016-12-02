@@ -52,6 +52,7 @@ function main () {
 
     make:dir .cache .config .local/bin
 
+    make:link ackrc         .config/
     make:link bash          .config/
     make:link bash/bashrc   .bashrc
     make:link bc            .config/

@@ -23,6 +23,7 @@ bind -f "${HOME}/.config/inputrc"
 bind '"\C-f": menu-complete'
 
 
+export ACKRC="${HOME}/.config/ackrc"
 export BC_ENV_ARGS="${HOME}/.config/bc/init"
 export EDITOR="/usr/bin/vim"
 export LESSHISTFILE="${HOME}/.cache/less_history"

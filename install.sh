@@ -30,6 +30,19 @@ function make:link () {
 }
 
 
+function git:clone () {
+    local repo="${1}"
+    local dest="${HOME}/${2}"
+    if [[ -d $dest ]]; then
+        pushd "${dest}"
+        git pull --tags --prune
+        popd
+    else
+        git clone "${repo}" "${dest}"
+    fi
+}
+
+
 function setup:vim () {
     make:dir    .vim
     make:link   vim/vimrc       .vim/
@@ -42,6 +55,12 @@ function setup:vim () {
          --create-dirs --output "${dst}"\
          "${src}"
     vim -e +PlugInstall +qa 2>/dev/null || true
+}
+
+
+function setup:pyenv () {
+    git:clone https://github.com/yyuu/pyenv.git             .pyenv
+    git:clone https://github.com/yyuu/pyenv-virtualenv.git  .pyenv/plugins/pyenv-virtualenv
 }
 
 
@@ -65,6 +84,7 @@ function main () {
     make:link x/resources   .Xresources
 
     setup:vim
+    setup:pyenv
 }
 
 main

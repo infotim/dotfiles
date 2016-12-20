@@ -22,6 +22,12 @@ HISTSIZE=1000
 bind -f "${HOME}/.config/inputrc"
 bind '"\C-f": menu-complete'
 
+export PYENV_ROOT="${HOME}/.pyenv"
+export PATH="${PYENV_ROOT}/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+source ~/.pyenv/completions/pyenv.bash
+
 
 export ACKRC="${HOME}/.config/ackrc"
 export BC_ENV_ARGS="${HOME}/.config/bc/init"

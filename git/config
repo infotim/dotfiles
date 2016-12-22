@@ -17,6 +17,7 @@
     ci      = commit
     co      = checkout
     cob     = checkout -b
+    cof     = "!f () { git co \"feature/${1}\" || git cob \"feature/${1}\"; }; f"
     dh      = diff HEAD
     dhh     = diff HEAD~
     di      = diff

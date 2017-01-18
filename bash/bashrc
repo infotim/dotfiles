@@ -39,13 +39,14 @@ export LESSHISTFILE="${HOME}/.cache/less_history"
 
 alias ...='cd ../..'
 alias ..='cd ..'
-alias ack='ack-grep --color'
+alias ack="$(which ack-grep || which ack) --color"
 alias bc='bc -q'
 alias df='df -h'
 alias du='du -h'
 alias egrep='egrep --color=auto'
 alias gi='git'
 alias grep='grep --color=auto'
+alias igrep='grep --color=auto -i'
 alias ipython3='ptipython3'
 alias la='ls -la --color=auto'
 alias ll='ls -l --color=auto'

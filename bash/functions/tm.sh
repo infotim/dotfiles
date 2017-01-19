@@ -26,7 +26,7 @@ function tm () {
         fi
 
     elif [[ $# -eq 1 && -d "${path}" ]]; then
-        local session_name=${1/./_}  # tmux does not allow dot in session name
+        local session_name=${1//\./_}  # tmux does not allow dot in session name
         tmux attach-session -t "${session_name}"\
         || tmux new-session -c "${path}" -s "${session_name}"
 

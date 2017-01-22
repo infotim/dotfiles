@@ -33,8 +33,13 @@ export ACKRC="${HOME}/.config/ackrc"
 export BC_ENV_ARGS="${HOME}/.config/bc/init"
 export EDITOR="/usr/bin/vim"
 export LESSHISTFILE="${HOME}/.cache/less_history"
+export PATH="${HOME}/.local/bin:${PATH}"
+
+if [[ $(hostname --domain) == bank24.int ]]; then
+    export PIP_TRUSTED_HOST=pypi.python.org
+fi
+
 [[ -x /usr/bin/dircolors ]] && eval $(dircolors -b)  # Set LS_COLORS
-[[ -d "${HOME}/.local/bin" ]] && PATH="${HOME}/.local/bin:${PATH}"
 
 
 alias ...='cd ../..'

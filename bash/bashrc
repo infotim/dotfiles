@@ -39,7 +39,7 @@ export LESSHISTFILE="${HOME}/.cache/less_history"
 
 alias ...='cd ../..'
 alias ..='cd ..'
-alias ack="$(which ack-grep || which ack) --color"
+alias ack="$(which ack-grep 2>/dev/null || which ack 2>/dev/null) --color"
 alias bc='bc -q'
 alias df='df -h'
 alias du='du -h'

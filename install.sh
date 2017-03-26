@@ -80,6 +80,7 @@ function main () {
     make:link fonts         .fonts
     make:link git           .config/
     make:link inputrc       .config/
+    make:link mpv           .config/
     make:link profile       .profile
     make:link tmux.conf     .tmux.conf
     make:link x/resources   .Xresources

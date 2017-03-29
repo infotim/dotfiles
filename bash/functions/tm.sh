@@ -2,7 +2,7 @@ function _tm () {
     local root="${HOME}/src"
     local cur=${COMP_WORDS[COMP_CWORD]}
     COMPREPLY=($(\
-        find $root -type d -name .git -printf "%h\n"\
+        find "${root}" -type d -name .git -printf "%h\n"\
         | cut -d/ -f5-\
         | grep -i "$cur"
     ))

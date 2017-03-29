@@ -3,14 +3,14 @@ set -euo pipefail
 IFS=$'\n\t'
 
 
-DOTFILES=$(dirname $(readlink -f ${BASH_SOURCE[0]}))
+DOTFILES=$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")
 
 
 function make:clean (){
-    find ${HOME} -type l -print0 |
+    find "${HOME}" -type l -print0 |
         while IFS= read -r -d $'\0' file; do
-            if [[ $(readlink -f ${file}) == ${DOTFILES}* ]]; then
-                rm -f ${file}
+            if [[ $(readlink -f "${file}") == ${DOTFILES}* ]]; then
+                rm -f "${file}"
             fi
         done
 }
@@ -71,19 +71,20 @@ function main () {
 
     make:dir .cache .config .local/bin
 
-    make:link ackrc         .config/
-    make:link awesome       .config/
-    make:link bash          .config/
-    make:link bash/bashrc   .bashrc
-    make:link bc            .config/
-    make:link firejail      .config/
-    make:link fonts         .fonts
-    make:link git           .config/
-    make:link inputrc       .config/
-    make:link mpv           .config/
-    make:link profile       .profile
-    make:link tmux.conf     .tmux.conf
-    make:link x/resources   .Xresources
+    make:link ackrc             .config/
+    make:link awesome           .config/
+    make:link bash              .config/
+    make:link bash/bashrc       .bashrc
+    make:link bc                .config/
+    make:link firejail          .config/
+    make:link fonts             .fonts
+    make:link git               .config/
+    make:link inputrc           .config/
+    make:link mpv               .config/
+    make:link profile           .profile
+    make:link tmux.conf         .tmux.conf
+    make:link user-dirs.dirs    .config/
+    make:link x/resources       .Xresources
 
     setup:vim
     setup:pyenv

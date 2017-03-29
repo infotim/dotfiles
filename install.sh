@@ -84,6 +84,7 @@ function main () {
     make:link profile           .profile
     make:link tmux.conf         .tmux.conf
     make:link user-dirs.dirs    .config/
+    make:link user-dirs.locale  .config/
     make:link x/resources       .Xresources
 
     setup:vim

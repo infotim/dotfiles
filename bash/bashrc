@@ -61,6 +61,7 @@ alias ltail='clear; tail -fn0'
 alias pie='perl -pi -e'
 alias poweroff='systemctl poweroff'
 alias reboot='systemctl reboot'
+alias tree='tree --dirsfirst -C'
 
 
 for x in ${HOME}/.config/bash/*; do

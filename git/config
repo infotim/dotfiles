@@ -14,6 +14,7 @@
     brr     = "!f () { LANG=C git branch -vv; }; f"
     brc     = "!f () { git fetch --prune; git branch -d $(git branch --list --merged | grep -v -e develop -e master) 2>/dev/null || true; }; f"
     ca      = commit --amend
+    cd      = checkout develop
     ci      = commit
     co      = checkout
     cob     = checkout -b
@@ -25,6 +26,7 @@
     ll      = log --format=line
     pl      = pull --tags --prune
     pu      = push
+    puf     = "!f () { git push --set-upstream origin $(git rev-parse --abbrev-ref HEAD); }; f"
     st      = status -sb
 
 [pretty]

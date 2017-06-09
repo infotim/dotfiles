@@ -78,6 +78,7 @@ nnoremap <leader>d :bdelete<CR>
 nnoremap <leader>f :Unite -no-split -buffer-name=files -start-insert file_rec/async:!<CR>
 nnoremap <leader>/ :Unite -no-split -buffer-name=ack-grep -start-insert grep:.<CR>
 nnoremap <leader>q :q<CR>
+nnoremap <leader>yw byw
 nnoremap <leader>w :w<CR>
 vnoremap <leader>s :sort<CR>
 

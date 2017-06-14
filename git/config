@@ -28,6 +28,7 @@
     pu      = push
     puf     = "!f () { git push --set-upstream origin $(git rev-parse --abbrev-ref HEAD); }; f"
     st      = status -sb
+    sl      = stash list
 
 [pretty]
     line ="%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset"

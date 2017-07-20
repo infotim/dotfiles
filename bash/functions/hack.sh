@@ -4,7 +4,6 @@ hack () {
         mkdir -p "${root}"
         git -C "${root}" init
     fi
-    cd "${root}" || exit
 }
 
 _hack () {

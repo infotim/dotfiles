@@ -33,7 +33,6 @@ export PIPENV_VENV_IN_PROJECT=1
 [[ -x /usr/bin/dircolors ]] && eval $(dircolors -b)  # Set LS_COLORS
 
 
-alias ...='cd ../..'
 alias ..='cd ..'
 alias bc='bc -q'
 alias df='df -h'
@@ -41,15 +40,11 @@ alias du='du -h'
 alias egrep='egrep --color=auto'
 alias gi='git'
 alias grep='grep --color=auto'
-alias igrep='grep --color=auto -i'
-alias ipython3='ptipython3 --vi'
 alias ipython='ptipython3 --vi'
 alias la='ls -la --color=auto'
 alias ll='ls -l --color=auto'
 alias ls='ls --color=auto'
-alias ltail='clear; tail -fn0'
 alias pie='perl -pi -e'
-alias pipi='pip3.6 install --user'
 alias poweroff='systemctl poweroff'
 alias reboot='systemctl reboot'
 alias tree='tree --dirsfirst -C'

@@ -16,7 +16,7 @@ shopt -s no_empty_cmd_completion
 HISTCONTROL=ignoreboth:erasedups
 HISTFILE="${HOME}/.cache/bash_history"
 HISTFILESIZE=5000
-HISTIGNORE='mc:bc:cd*:ls *:ll *:la *:vim *:rtorrent'
+HISTIGNORE='mc:bc:cd*:ls *:ll *:la *:vim *:git st:git di:git aa:git pu'
 HISTSIZE=1000
 
 

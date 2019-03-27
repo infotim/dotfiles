@@ -2,9 +2,7 @@
 set -euo pipefail
 IFS=$'\n\t'
 
-
 DOTFILES=$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")
-
 
 function make:clean (){
     find "${HOME}" -type l -print0 |
@@ -58,12 +56,6 @@ function setup:vim () {
 }
 
 
-function setup:pyenv () {
-    git:clone https://github.com/yyuu/pyenv.git             .pyenv
-    git:clone https://github.com/yyuu/pyenv-virtualenv.git  .pyenv/plugins/pyenv-virtualenv
-}
-
-
 function main () {
     cd "${DOTFILES}"
     make:clean
@@ -72,23 +64,16 @@ function main () {
     make:dir .cache .config .local/bin
 
     make:link ackrc             .config/
-    make:link awesome           .config/
     make:link bash              .config/
     make:link bash/bashrc       .bashrc
     make:link bc                .config/
-    make:link firejail          .config/
-    make:link fonts             .fonts
     make:link git               .config/
     make:link inputrc           .config/
     make:link mpv               .config/
     make:link profile           .profile
     make:link tmux.conf         .tmux.conf
-    make:link user-dirs.dirs    .config/
-    make:link user-dirs.locale  .config/
-    make:link x/resources       .Xresources
 
     setup:vim
-    setup:pyenv
 }
 
 main

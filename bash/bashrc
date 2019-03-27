@@ -22,29 +22,19 @@ HISTSIZE=1000
 bind -f "${HOME}/.config/inputrc"
 bind '"\C-f": menu-complete'
 
-export PYENV_ROOT="${HOME}/.pyenv"
-export PATH="${PYENV_ROOT}/bin:$PATH"
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
-source ~/.pyenv/completions/pyenv.bash
-
-
 export ACKRC="${HOME}/.config/ackrc"
 export BC_ENV_ARGS="${HOME}/.config/bc/init"
 export EDITOR="/usr/bin/vim"
 export LESSHISTFILE="${HOME}/.cache/less_history"
 export PATH="${HOME}/.local/bin:${PATH}"
 
-if [[ $(hostname --domain) == bank24.int ]]; then
-    export PIP_TRUSTED_HOST=pypi.python.org
-fi
+export PIPENV_VENV_IN_PROJECT=1
 
 [[ -x /usr/bin/dircolors ]] && eval $(dircolors -b)  # Set LS_COLORS
 
 
 alias ...='cd ../..'
 alias ..='cd ..'
-alias ack="$(which ack-grep 2>/dev/null || which ack 2>/dev/null) --color"
 alias bc='bc -q'
 alias df='df -h'
 alias du='du -h'

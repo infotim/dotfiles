@@ -1,1 +1,3 @@
 --ignore-dir=.tox
+--ignore-dir=.venv
+--ignore-dir=venv

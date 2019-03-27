@@ -3,6 +3,7 @@
 # If not running interactively, don't do anything
 [[ ! $- == *i* ]] && return
 
+[[ -r /usr/share/autojump/autojump.bash ]] && . /usr/share/autojump/autojump.bash
 
 shopt -s autocd
 shopt -s cdspell

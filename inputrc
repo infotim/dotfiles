@@ -1,3 +1,4 @@
 $if Bash
+    set match-hidden-files off
     set show-all-if-ambiguous on
 $endif

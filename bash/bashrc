@@ -3,8 +3,6 @@
 # If not running interactively, don't do anything
 [[ ! $- == *i* ]] && return
 
-[[ -r /usr/share/autojump/autojump.bash ]] && . /usr/share/autojump/autojump.bash
-
 shopt -s autocd
 shopt -s cdspell
 shopt -s checkwinsize
@@ -16,7 +14,7 @@ shopt -s no_empty_cmd_completion
 HISTCONTROL=ignoreboth:erasedups
 HISTFILE="${HOME}/.cache/bash_history"
 HISTFILESIZE=5000
-HISTIGNORE='mc*:bc:cd*:ls *:ll *:la *:vim *:git st*:git di*:git aa*:git add *:git pu*:git commit*:file *'
+HISTIGNORE='?:??:file *:git*:j *:j? *:pwd*:vim*'
 HISTSIZE=1000
 
 
@@ -39,7 +37,6 @@ alias bc='bc -q'
 alias df='df -h'
 alias du='du -h'
 alias egrep='egrep --color=auto'
-alias gi='git'
 alias grep='grep --color=auto'
 alias ipython='ptipython3 --vi'
 alias la='ls -la --color=auto'

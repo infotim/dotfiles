@@ -3,5 +3,6 @@ function j () {
 }
 
 function jc () {
-    code $(fd --type d "${1:-.}" ~/src | fzf -1 --height=10)
+    cd $(fd --type d "${1:-.}" ~/src | fzf -1 --height=10)
+    code .
 }

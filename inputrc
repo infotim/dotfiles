@@ -1,4 +1,5 @@
 $if Bash
+    set completion-ignore-case on
     set match-hidden-files off
     set show-all-if-ambiguous on
 $endif

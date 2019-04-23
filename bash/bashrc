@@ -10,6 +10,7 @@ shopt -s histappend
 shopt -u hostcomplete
 shopt -s no_empty_cmd_completion
 
+complete -d cd
 
 HISTCONTROL=ignoreboth:erasedups
 HISTFILE="${HOME}/.cache/bash_history"
